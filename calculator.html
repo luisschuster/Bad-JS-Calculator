@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="preload" href="/css/calculator.css" as="style">
+        <link rel="preload" href="/css/fonts.css" as="style">
+        <link rel="stylesheet" href="/css/calculator.css">
+        <link rel="stylesheet" href="/css/fonts.css">
+    </head>
+<body>
+
+    <h1>Bad Calculator</h1>
+
+    <div id="input-div">
+
+        <input id="text-input1" type="text">
+
+        <select name="operations" id="operations">
+            <option value="addition">addition</option>
+            <option value="subtraction">subtraction</option>
+            <option value="multiplication">multiplication</option>
+            <option value="division">division</option>
+        </select>
+
+        <button id="button">Calculate</button>
+
+        <input id="text-input2" type="text">
+
+        <p style="font-size: 30px;">&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;</p>
+
+        <input id="result" type="text">
+        
+    </div>
+
+    <script src="/js/calculator.js"></script>
+
+</body>
+</html>
