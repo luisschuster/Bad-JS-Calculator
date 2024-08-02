@@ -1,61 +1,60 @@
-document.getElementById("button").addEventListener("click", hmm)
+const elmA = document.getElementById("text-input1");
+const elmB = document.getElementById("text-input2");
+const result = document.getElementById("result");
+const operationsm = document.getElementById("operations");
+const button = document.getElementById("button");
+
+button.onclick = hmm;
 
 function hmm() {
-    let getA = parseFloat(document.getElementById("text-input1").value);
-    let getB = parseFloat(document.getElementById("text-input2").value);
-    let operationsm = document.getElementById("operations").value;
-    console.log(operationsm);
 
-    if (isNaN(getA && getB)){
+    if (isNaN(parseFloat(elmA.value) && parseFloat(elmB.value))) {
         document.getElementById("result").value = "Enter a number.";
+        return;
     }
-    else if (operationsm === "addition") {
-        add();
+
+    const valA = parseFloat(elmA.value);
+    const valB = parseFloat(elmB.value);
+
+    switch (operationsm.value) {
+        case "addition":
+            add(valA, valB);
+            break;
+        case "subtraction":
+            sub(valA, valB);
+            break;
+        case "multiplication":
+            mul(valA, valB);
+            break;
+        case "division":
+            div(valA, valB);
+            break;
     }
-    else if (operationsm === "subtraction"){
-        sub();
-    }
-    else if (operationsm === "multiplication"){
-        mul();
+
+}
+
+function add(valA, valB) {
+    const res = valA + valB;
+    result.value = res;
+}
+
+function sub(valA, valB) {
+    const res = valA - valB;
+    result.value = res;
+}
+
+function mul(valA, valB) {
+    const res = valA * valB;
+    result.value = res;
+}
+
+function div(valA, valB) {
+    if (valB === 0) {
+        const res = "Not allowed.";
+        result.value = res;
     }
     else {
-        div();
+        const res = valA / valB;
+        result.value = res;
     }
-}
-
-function add() {
-    let getA = parseFloat(document.getElementById("text-input1").value);
-    let getB = parseFloat(document.getElementById("text-input2").value);
-    console.log(getA, getB);
-    let res = getA + getB;
-    console.log(res);
-    document.getElementById("result").value = res;
-}
-
-function sub() {
-    // he's just like me fr :skull:
-    let getA = parseFloat(document.getElementById("text-input1").value);
-    let getB = parseFloat(document.getElementById("text-input2").value);
-    console.log(getA, getB);
-    let res = getA - getB;
-    console.log(res);
-    document.getElementById("result").value = res;
-}
-
-function mul() {
-    let getA = parseFloat(document.getElementById("text-input1").value);
-    let getB = parseFloat(document.getElementById("text-input2").value);
-    console.log(getA, getB);
-    let res = getA * getB;
-    console.log(res);
-    document.getElementById("result").value = res;
-}
-
-function div() {
-    let getA = parseFloat(document.getElementById("text-input1").value);
-    let getB = parseFloat(document.getElementById("text-input2").value);
-    console.log(getA, getB);
-    let res = getA / getB;
-    console.log(res);
-    document.getElementById("result").value = res;
 }
